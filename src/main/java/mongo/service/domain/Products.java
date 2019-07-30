@@ -1,39 +1,47 @@
 package mongo.service.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.bson.codecs.pojo.annotations.BsonCreator;
 import org.bson.codecs.pojo.annotations.BsonDiscriminator;
 import org.bson.codecs.pojo.annotations.BsonProperty;
 
+import java.util.Date;
+
 @BsonDiscriminator
 public class Products {
+
     @BsonCreator
-    public Products(@BsonProperty("product_id") int productId,//
-                    @BsonProperty("product_code") String productCode,//
-                    @BsonProperty("product_name") String productName,//
-                    @BsonProperty("supplier_id") int supplierId,//
-                    @BsonProperty("supplier_code") String supplierCode,//
-                    @BsonProperty("main_menu_id") int mainMenuId,//
-                    @BsonProperty("mainmenu_name") String mainMenuName,//
-                    @BsonProperty("sub_menu_id") int subMenuId,//
-                    @BsonProperty("submenu_name") String subMenuName,//
-                    @BsonProperty("sub_menucategory_id") int subMenuCategoryId,//
-                    @BsonProperty("submenu_category_name") String subMenuCategoryName,//
-                    @BsonProperty("normal_price") int normalPrice,//
-                    @BsonProperty("member_price") int memberPrice,//
-                    @BsonProperty("agent_commision")int agentCommision,//
-                    @BsonProperty("agent_price") int agentPrice,//
-                    @BsonProperty("variant_id") int variantId,//
-                    @BsonProperty("variant_descriptions") String varianDescription,//
-                    @BsonProperty("main_image") String mainImage,//
-                    @BsonProperty("slug_url") String slugUrl,//
-                    @BsonProperty("total_view_login") int totalViewLogin,//
-                    @BsonProperty("total_view_non_login") int totalViewNonLogin,//
-                    @BsonProperty("total_sold_product") int totalSoldProduct,//
-                    @BsonProperty("mainmenu_slug") String mainMenuSlug,//
-                    @BsonProperty("submenu_slug") String subMenuSlug,//
-                    @BsonProperty("submenu_category_slug") String subMenuCategorySlug,//
-                    @BsonProperty("total_sold_variant") int totalSoldVariant,//
-                    @BsonProperty("quantity") int quantity){//
+    public Products(
+            @JsonProperty("product_id") @BsonProperty("product_id") int productId,
+            @JsonProperty("product_code") @BsonProperty("product_code") String productCode,
+            @JsonProperty("product_name") @BsonProperty("product_name") String productName,
+            @JsonProperty("supplier_id") @BsonProperty("supplier_id") int supplierId,//
+            @JsonProperty("supplier_code") @BsonProperty("supplier_code") String supplierCode,//
+            @JsonProperty("main_menu_id") @BsonProperty("main_menu_id") int mainMenuId,//
+            @JsonProperty("mainmenu_name") @BsonProperty("mainmenu_name") String mainMenuName,//
+            @JsonProperty("sub_menu_id") @BsonProperty("sub_menu_id") int subMenuId,//
+            @JsonProperty("submenu_name") @BsonProperty("submenu_name") String subMenuName,//
+            @JsonProperty("sub_menucategory_id") @BsonProperty("sub_menucategory_id") int subMenuCategoryId,//
+            @JsonProperty("submenu_category_name") @BsonProperty("submenu_category_name") String subMenuCategoryName,//
+            @JsonProperty("normal_price") @BsonProperty("normal_price") int normalPrice,//
+            @JsonProperty("member_price") @BsonProperty("member_price") int memberPrice,//
+            @JsonProperty("agent_commision") @BsonProperty("agent_commision") int agentCommision,//
+            @JsonProperty("agent_price") @BsonProperty("agent_price") int agentPrice,//
+            @JsonProperty("variant_id") @BsonProperty("variant_id") int variantId,//
+            @JsonProperty("variant_descriptions") @BsonProperty("variant_descriptions") String varianDescription,//
+            @JsonProperty("main_image") @BsonProperty("main_image") String mainImage,//
+            @JsonProperty("created_at") @BsonProperty("created_at") Date createdAt,//
+            @JsonProperty("updated_at") @BsonProperty("updated_at") Date updatedAt,//
+            @JsonProperty("slug_url") @BsonProperty("slug_url") String slugUrl,//
+            @JsonProperty("total_view_login") @BsonProperty("total_view_login") int totalViewLogin,//
+            @JsonProperty("total_view_non_login") @BsonProperty("total_view_non_login") int totalViewNonLogin,//
+            @JsonProperty("total_sold_product") @BsonProperty("total_sold_product") int totalSoldProduct,//
+            @JsonProperty("mainmenu_slug") @BsonProperty("mainmenu_slug") String mainMenuSlug,//
+            @JsonProperty("submenu_slug") @BsonProperty("submenu_slug") String subMenuSlug,//
+            @JsonProperty("submenu_category_slug") @BsonProperty("submenu_category_slug") String subMenuCategorySlug,//
+            @JsonProperty("total_sold_variant") @BsonProperty("total_sold_variant") int totalSoldVariant,//
+            @JsonProperty("quantity") @BsonProperty("quantity") int quantity
+    ){
         this.productId = productId;
         this.productCode = productCode;
         this.productName = productName;
@@ -50,6 +58,8 @@ public class Products {
         this.variantId = variantId;
         this.varianDescription = varianDescription;
         this.mainImage = mainImage;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
         this.slugUrl = slugUrl;
         this.totalViewLogin = totalViewLogin;
         this.totalViewNonLogin = totalViewNonLogin;
@@ -63,39 +73,42 @@ public class Products {
         this.subMenuName = subMenuName;
     }
 
-    int productId;
-    String productCode;
-    String productName;
-    int supplierId;
-    String supplierCode;
-    int mainMenuId;
-    String mainMenuName;
-    int subMenuId;
-    String subMenuName;
-    int subMenuCategoryId;
-    String subMenuCategoryName;
-    int normalPrice;
-    int memberPrice;
-    int agentPrice;
-    int agentCommision;
-    int variantId;
-    String varianDescription;
-    String mainImage;
-    String slugUrl;
-    int totalViewLogin;
-    int totalViewNonLogin;
-    int totalSoldProduct;
-    String mainMenuSlug;
-    String subMenuSlug;
-    String subMenuCategorySlug;
-    int totalSoldVariant;
-    int quantity;
+    @JsonProperty("product_id") @BsonProperty("product_id") int productId;
+    @JsonProperty("product_code") @BsonProperty("product_code") String productCode;
+    @JsonProperty("product_name") @BsonProperty("product_name") String productName;
+    @JsonProperty("supplier_id") @BsonProperty("supplier_id") int supplierId;
+    @JsonProperty("supplier_code") @BsonProperty("supplier_code") String supplierCode;
+    @JsonProperty("main_menu_id") @BsonProperty("main_menu_id") int mainMenuId;
+    @JsonProperty("mainmenu_name") @BsonProperty("mainmenu_name") String mainMenuName;
+    @JsonProperty("sub_menu_id") @BsonProperty("sub_menu_id") int subMenuId;
+    @JsonProperty("submenu_name") @BsonProperty("submenu_name") String subMenuName;
+    @JsonProperty("sub_menucategory_id") @BsonProperty("sub_menucategory_id") int subMenuCategoryId;
+    @JsonProperty("submenu_category_name") @BsonProperty("submenu_category_name") String subMenuCategoryName;
+    @JsonProperty("normal_price") @BsonProperty("normal_price") int normalPrice;
+    @JsonProperty("member_price") @BsonProperty("member_price") int memberPrice;
+    @JsonProperty("agent_commision") @BsonProperty("agent_commision") int agentCommision;
+    @JsonProperty("agent_price") @BsonProperty("agent_price") int agentPrice;
+    @JsonProperty("variant_id") @BsonProperty("variant_id") int variantId;
+    @JsonProperty("variant_descriptions") @BsonProperty("variant_descriptions") String varianDescription;
+    @JsonProperty("main_image") @BsonProperty("main_image") String mainImage;
+    @JsonProperty("created_at") @BsonProperty("created_at") Date createdAt;
+    @JsonProperty("updated_at") @BsonProperty("updated_at") Date updatedAt;
+    @JsonProperty("slug_url") @BsonProperty("slug_url") String slugUrl;
+    @JsonProperty("total_view_login") @BsonProperty("total_view_login") int totalViewLogin;
+    @JsonProperty("total_view_non_login") @BsonProperty("total_view_non_login") int totalViewNonLogin;
+    @JsonProperty("total_sold_product") @BsonProperty("total_sold_product") int totalSoldProduct;
+    @JsonProperty("mainmenu_slug") @BsonProperty("mainmenu_slug") String mainMenuSlug;
+    @JsonProperty("submenu_slug") @BsonProperty("submenu_slug") String subMenuSlug;
+    @JsonProperty("submenu_category_slug") @BsonProperty("submenu_category_slug") String subMenuCategorySlug;
+    @JsonProperty("total_sold_variant") @BsonProperty("total_sold_variant") int totalSoldVariant;
+    @JsonProperty("quantity") @BsonProperty("quantity") int quantity;
 
     public void setProductId(int productId) { this.productId = productId; }
     public int getProductId() { return productId; }
 
     public void setProductCode(String productCode) { this.productCode = productCode; }
     public String getProductCode() { return productCode; }
+
 
     public void setProductName(String productName) { this.productName = productName; }
     public String getProductName() { return productName; }
@@ -144,6 +157,12 @@ public class Products {
 
     public void setMainImage(String mainImage) { this.mainImage = mainImage; }
     public String getMainImage() { return mainImage; }
+
+    public void setCreatedAt(Date createdAt) { this.createdAt = createdAt; }
+    public Date getCreatedAt() { return createdAt; }
+
+    public void setUpdatedAt(Date updatedAt) { this.updatedAt = updatedAt; }
+    public Date getUpdatedAt() { return updatedAt; }
 
     public void setSlugUrl(String slugUrl) { this.slugUrl = slugUrl; }
     public String getSlugUrl() { return slugUrl; }
