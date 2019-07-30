@@ -1,0 +1,15 @@
+---
+micronaut:
+  application:
+    name: mongo-service
+  server:
+    port: 8087
+
+
+---
+mongodb:
+  uri: mongodb://178.62.54.209:27017/tokdis_job
+  cluster:
+    maxWaitQueueSize: 5
+    connectionPool:
+      maxSize: 20
